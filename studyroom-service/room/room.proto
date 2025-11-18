@@ -18,7 +18,7 @@ enum RoomStatus {
 // ==========================================
 message Room {
   int64 id = 1;                               // 스터디룸 ID
-  int64 department_code = 2;                    // 학과 ID
+  string department_code = 2;                    // 학과 ID
   string name = 3;                            // 스터디룸 이름
   int32 maximum_member = 4;                   // 최대 인원
   RoomStatus status = 5;                      // 스터디룸 상태
@@ -31,7 +31,7 @@ message Room {
 // CREATE
 // ==========================================
 message CreateRoomRequest {
-  int64 department_code = 1;  
+  string department_code = 1;  
   string name = 2;
   int32 maximum_member = 3;
   RoomStatus status = 4;
@@ -66,7 +66,7 @@ message ListRoomsResponse {
 // ==========================================
 message UpdateRoomRequest {
   int64 id = 1;
-  int64 department_code = 2; 
+  string department_code = 2; 
   string name = 3;
   int32 maximum_member = 4;
   RoomStatus status = 5;
