@@ -15,7 +15,6 @@ enum EventType {
   EVENT_TYPE_CREATED = 1;
   EVENT_TYPE_UPDATED = 2;
   EVENT_TYPE_DELETED = 3;
-  EVENT_TYPE_STATUS_CHANGED = 4;
 }
 
 // 유저 변경 이벤트
