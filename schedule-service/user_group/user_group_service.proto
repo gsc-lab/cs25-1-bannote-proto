@@ -2,14 +2,13 @@ syntax = "proto3";
 
 package bannote.scheduleservice.user.v1;
 
-import "user_group/user_group.proto";       // 같은 폴더
-import "group/group.proto";                 // schedule-service/group/
-import "tag/tag.proto";                     // schedule-service/tag/
+import "user_group/user_group.proto";
+
 
 service UserGroupService {
-  rpc AddUserToGroup(AddUserToGroupRequest) returns (UserGroupResponse);
-  rpc GetUsersInGroup(GetUsersInGroupRequest) returns (UserGroupListResponse);
-  rpc GetGroupsOfUser(GetGroupsOfUserRequest) returns (GroupListResponse);
+  rpc AddUserToGroup(AddUserToGroupRequest) returns (AddUserToGroupResponse);
+  rpc GetUsersInGroup(GetUsersInGroupRequest) returns (GetUsersInGroupResponse);
+  rpc GetGroupsOfUser(GetGroupsOfUserRequest) returns (GetGroupsOfUserResponse);
   rpc RemoveUserFromGroup(RemoveUserFromGroupRequest) returns (RemoveUserFromGroupResponse);
 }
 
