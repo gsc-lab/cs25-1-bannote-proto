@@ -25,6 +25,10 @@ service AllowedDomainService {
 //  도메인 허용 목록 전체 조회 API
   rpc ListAllowedDomain (ListAllowedDomainRequest) returns (ListAllowedDomainResponse) {
   }
+
+// 이메일을 이용하여 허용된 도메인인지 검증 API
+  rpc CheckAllowedDomain (CheckAllowedDomainRequest) returns (CheckAllowedDomainResponse) {
+  }
 }
 
 // 도메인 허용 목록 추가 시 필요한 정보
@@ -57,4 +61,13 @@ message ListAllowedDomainResponse {
   int32 total_count = 2;
   int32 page = 3;
   int32 size = 4;
+}
+
+message CheckAllowedDomainRequest {
+  string email = 1;
+}
+
+message CheckAllowedDomainResponse {
+  bool is_allowed = 1;
+  string domain = 2;
 }
