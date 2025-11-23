@@ -12,7 +12,7 @@ service ScheduleService {
   rpc GetSchedule(GetScheduleRequest) returns (GetScheduleResponse);
   rpc UpdateSchedule(UpdateScheduleRequest) returns (UpdateScheduleResponse);
   rpc DeleteSchedule(DeleteScheduleRequest) returns (DeleteScheduleResponse);
-  //개인 그룹은 그룹만 가질수있고 스케줄은 없을 수 있기떄문에
+  //개인 그룹은 그룹만 가질 수 있고 스케줄은 없을 수 있기떄문에
   rpc DeleteScheduleLink(DeleteScheduleLinkRequest)returns (DeleteScheduleLinkResponse);
 }
 
@@ -42,6 +42,9 @@ message GetScheduleListRequest {
   repeated int64 group_ids = 1;
   optional google.protobuf.Timestamp start_date = 2;
   optional google.protobuf.Timestamp end_date = 3;
+  
+  int32 page = 10;
+  int32 per_page = 11;
 }
 
 message GetScheduleRequest {
