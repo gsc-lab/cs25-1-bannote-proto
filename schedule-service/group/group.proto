@@ -27,6 +27,7 @@ message Group {
   int64 updated_by = 14;
   int64 deleted_by = 15;
   repeated bannote.scheduleservice.tag.v1.Tag tags = 16;
+  bool bookmark = 17;
 }
 
 message GroupListResponse {
