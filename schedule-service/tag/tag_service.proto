@@ -10,6 +10,7 @@ service TagService {
   rpc GetTag(GetTagRequest) returns (GetTagResponse);
   rpc GetTagList(GetTagListRequest) returns (GetTagListResponse);
   rpc DeleteTag(DeleteTagRequest) returns (DeleteTagResponse);
+  rpc GetManyTags(GetManyTagsRequest) returns (GetManyTagsResponse);
 }
 
 // ================================
@@ -46,4 +47,12 @@ message GetTagListRequest {
 
 message GetTagListResponse {
   TagListResponse tag_list_response = 1;
+}
+
+message GetManyTagsRequest {
+  repeated int64 tag_ids = 1;
+}
+
+message GetManyTagsResponse {
+  repeated Tag tags = 1;
 }
