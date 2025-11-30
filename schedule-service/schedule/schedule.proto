@@ -35,4 +35,11 @@ message Schedule {
 
 message ScheduleListResponse {
   repeated Schedule schedules = 1;
+
+  int32 page = 2;            // 현재 페이지
+  int32 per_page = 3;        // 요청한 per_page
+  int64 total_count = 4;     // 전체 스케줄 수
+  int32 total_pages = 5;     // 전체 페이지 수
+
+
 }
