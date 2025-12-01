@@ -118,10 +118,6 @@ message ListGroupEditorsRequest {
   int64 group_id = 1;
 }
 
-message Editor {
-  int64 user_id = 1;
-}
-
 message ListGroupEditorsResponse {
-  repeated Editor editors = 1;
+  repeated int64 editor_ids = 1;
 }
