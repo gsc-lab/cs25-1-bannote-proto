@@ -4,7 +4,7 @@ package bannote.scheduleservice.user.v1;
 
 import "google/protobuf/timestamp.proto";
 import "group/group.proto";
-// USER 
+
 message AddUserToGroupResponse {
   string user_id = 1;
   int64 group_id = 2;
