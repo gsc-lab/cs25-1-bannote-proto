@@ -1,0 +1,28 @@
+name: Buf Push to BSR
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.proto"
+      - "buf.yaml"
+      - "buf.lock"
+
+jobs:
+  buf-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Buf
+        uses: bufbuild/buf-setup-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Buf Push
+        env:
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+        run: buf push
