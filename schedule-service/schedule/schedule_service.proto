@@ -21,8 +21,7 @@ message CreateScheduleRequest {
   int64 group_id = 1;
   optional string comment = 2;
   bool is_highlighted = 3;
-  int64 created_by = 4;
-  ScheduleLinkData link = 5;
+  ScheduleLinkData link = 4;
 }
 
 message ScheduleLinkData {
