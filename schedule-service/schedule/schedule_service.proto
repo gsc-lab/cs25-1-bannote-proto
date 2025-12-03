@@ -30,17 +30,15 @@ message ScheduleLinkData {
   optional int64 place_id = 2;
   optional string place_text = 3;
   string description = 4;
-  string start_date = 5;// YYYY-MM-DD
-  string end_date =6;// YYYY-MM-DD
-  string start_time = 7;// HH:mm
-  string end_time = 8;// HH:mm
-  bool is_allday = 9;
+  string start_at = 5; // YYYY-MM-DDTHH:mm
+  string end_at =6; // YYYY-MM-DDTHH:mm
+  bool is_allday = 7;
 }
 
 message GetScheduleListRequest {
   repeated int64 group_ids = 1;
-  optional string start_date = 2;
-  optional string end_date = 3;
+  optional string start_at = 2;
+  optional string end_at = 3;
   
   int32 page = 10;
   int32 per_page = 11;
