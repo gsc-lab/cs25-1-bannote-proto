@@ -21,10 +21,8 @@ message CreateScheduleRequest {
   int64 group_id = 1;
   optional string comment = 2;
   bool is_highlighted = 3;
-  string start_date = 4;
-  string end_date = 5;
-  int64 created_by = 6;
-  ScheduleLinkData link = 7;
+  int64 created_by = 4;
+  ScheduleLinkData link = 5;
 }
 
 message ScheduleLinkData {
@@ -32,10 +30,13 @@ message ScheduleLinkData {
   optional int64 place_id = 2;
   optional string place_text = 3;
   string description = 4;
-  string start_time = 5;
-  string end_time = 6;
-  bool is_allday = 7;
+  string start_date = 5;// YYYY-MM-DD
+  string end_date =6;// YYYY-MM-DD
+  string start_time = 7;// HH:mm
+  string end_time = 8;// HH:mm
+  bool is_allday = 9;
 }
+
 message GetScheduleListRequest {
   repeated int64 group_ids = 1;
   optional string start_date = 2;
@@ -53,6 +54,7 @@ message UpdateScheduleRequest {
   int64 schedule_id = 1;
   optional string comment = 2;
   optional bool is_highlighted = 3;
+  optional ScheduleLinkData link = 4;
 }
 
 message DeleteScheduleRequest {
@@ -62,7 +64,6 @@ message DeleteScheduleRequest {
 message DeleteScheduleResponse {
   bool success = 1;
 }
-
 
 message DeleteScheduleLinkRequest {
   int64 schedule_id = 1;

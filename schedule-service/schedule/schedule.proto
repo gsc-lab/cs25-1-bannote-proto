@@ -10,9 +10,11 @@ message ScheduleLink {
   optional int64 place_id = 3;
   optional string place_text = 4;
   string description = 5;
-  string start_time = 6;
-  string end_time = 7;
-  bool is_allday = 8;   
+  string start_date = 6; // YYYY-MM-DD
+  string end_date =7;   // YYYY-MM-DD
+  string start_time = 8; // HH:mm
+  string end_time = 9; // HH:mm
+  bool is_allday = 10;   
 }
 
 message Schedule {
