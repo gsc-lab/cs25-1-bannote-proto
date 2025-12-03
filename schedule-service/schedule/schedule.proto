@@ -10,8 +10,8 @@ message ScheduleLink {
   optional int64 place_id = 3;
   optional string place_text = 4;
   string description = 5;
-  google.protobuf.Timestamp start_time = 6;
-  google.protobuf.Timestamp end_time = 7;
+  string start_at = 6;  // YYYY-MM-DDTHH:mm
+  string end_at = 7;  // YYYY-MM-DDTHH:mm
   bool is_allday = 8;   
 }
 
